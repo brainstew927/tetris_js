@@ -2,6 +2,9 @@
 var x = 0;
 var y = 0;
 
+
+var string_stamp = "";
+
 var mappa = [
   [1,1,1],
   [0,0,0],
@@ -36,9 +39,14 @@ for(var i = 0; i < 10; i++){
   console.log(x);
 }
 */
-for (var i = 0; i < mappa[0].length; i++) {
-    console.log(mappa[0][i]);
-    console.log("sep ");
-}
+for (var i = 0; i < mappa.length; i++) {
 
-//console.log(mappa[0].length);
+
+
+    for(var x = 0; x < mappa[i].length; x++) {
+        string_stamp = string_stamp + mappa[i][x].toString();
+
+    }
+    string_stamp= string_stamp + "\n";
+}
+console.log(string_stamp);
