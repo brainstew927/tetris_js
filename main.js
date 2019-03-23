@@ -1,1 +1,3 @@
-Window.
+function loadPage() {
+    console.log("loaded");
+}
