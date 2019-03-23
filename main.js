@@ -7,6 +7,7 @@ ex = false;
 x = 60;
 y = 50;
 
+vel = 1;
 
 ob_hg = 50;
 ob_wd = 50;
@@ -36,9 +37,9 @@ function draw() {
 }
 
 function update() {
-    if (y <=  canvas.height - ob_hg) {
-        y = y + 1;
-  
+    if (y + vel <=  canvas.height - ob_hg) {
+        y = y + vel;
+       
     }
     else {
         ex = true;
