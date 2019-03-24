@@ -1,5 +1,5 @@
 # tetris_js
-a clone of tetris in JavaScript
+un clone di tetris scritto in javascript!
 
 *funzioni che saranno implementate:*
 
