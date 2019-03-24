@@ -3,4 +3,4 @@ a clone of tetris in JavaScript
 
 *funzioni che saranno implementate:*
 
--[] gameplay classico di tetris
+-[ ] gameplay classico di tetris
