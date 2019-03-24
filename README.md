@@ -4,3 +4,5 @@ a clone of tetris in JavaScript
 *funzioni che saranno implementate:*
 
 - [ ] gameplay classico di tetris
+- [ ] highscore del sito
+- [ ] grafica migliore
