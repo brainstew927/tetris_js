@@ -4,7 +4,7 @@ txt = document.getElementById("TextArea1");
 
 ex = false;
 
-x = 60;
+x = canvas.width -50;
 y = 50;
 
 vel = 1;
@@ -12,9 +12,15 @@ vel = 1;
 ob_hg = 50;
 ob_wd = 50;
 
+game_ob = {
+    x,
+    y
+   // type
+}
+
 function game_start() {
-    x = getRndInteger(0, canvas.width - ob_wd);
-    y = getRndInteger(0, canvas.height - ob_wd);
+    game_ob.x = x//getRndInteger(0, canvas.width - ob_wd);
+    game_ob.y = y//getRndInteger(0, canvas.height - ob_wd);
 }
 
 
@@ -24,28 +30,44 @@ function getRndInteger(min, max) {
 }
 
 function draw() {
+
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     ctx.beginPath();
-    ctx.rect(x, y, ob_hg, ob_wd);
+    ctx.rect(game_ob.x, game_ob.y, ob_hg, ob_wd);
     ctx.fillStyle = "#FF0000";
     ctx.fill();
     ctx.closePath();
-    console.log("eseguito!");
 
-    console.log(y)
+
+    console.log(game_ob.y)
     update();
 }
 
+function move_dx() {
+    if (game_ob.x + ob_wd <= canvas.width - ob_wd) {
+        game_ob.x += ob_wd;
+    }
+}
+
+function move_sx() {
+    if (game_ob.x - ob_wd >= 0) {
+        game_ob.x -= ob_wd;
+    }
+}
+
 function update() {
-    if (y + vel <=  canvas.height - ob_hg) {
-        y = y + vel;
-       
+    if (game_ob.y + ob_hg <=  canvas.height - ob_hg) {
+        game_ob.y = game_ob.y + ob_hg;
+      
+        move_sx();
     }
     else {
         ex = true;
+
+        move_dx();
     }
 
 }
 
 game_start();
-setInterval(draw, 10);
+setInterval(draw, 400);
