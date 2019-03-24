@@ -45,20 +45,23 @@ function draw() {
 
 function mov_man(event) {
 
-    console.log(event.key);
 
     if (movable) {
 
+      //  console.log("game y:" + game_ob.y + " canvas:" + canvas.height);
 
-        if (event.key == 'd') {
-            move_dx();
-            movable = false;
+        if (game_ob.y < canvas.height - ob_hg) {
 
-            console.log("destra!")
-        }
-        if (event.key == 'a') {
-            movable = false;
-            move_sx();
+            if (event.key == 'd') {
+                move_dx();
+                movable = false;
+
+                
+            }
+            if (event.key == 'a') {
+                movable = false;
+                move_sx();
+            }
         }
     }
 }
