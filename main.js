@@ -4,6 +4,8 @@ txt = document.getElementById("TextArea1");
 
 ex = false;
 
+movable = false;
+
 x = canvas.width -50;
 y = 50;
 
@@ -23,8 +25,6 @@ function game_start() {
     game_ob.y = y//getRndInteger(0, canvas.height - ob_wd);
 }
 
-
-
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min)) + min;
 }
@@ -43,6 +43,26 @@ function draw() {
     update();
 }
 
+function mov_man(event) {
+
+    console.log(event.key);
+
+    if (movable) {
+
+
+        if (event.key == 'd') {
+            move_dx();
+            movable = false;
+
+            console.log("destra!")
+        }
+        if (event.key == 'a') {
+            movable = false;
+            move_sx();
+        }
+    }
+}
+
 function move_dx() {
     if (game_ob.x + ob_wd <= canvas.width - ob_wd) {
         game_ob.x += ob_wd;
@@ -56,15 +76,15 @@ function move_sx() {
 }
 
 function update() {
+
+    movable = true;
+
     if (game_ob.y + ob_hg <=  canvas.height - ob_hg) {
         game_ob.y = game_ob.y + ob_hg;
-      
-        move_sx();
+
     }
     else {
         ex = true;
-
-        move_dx();
     }
 
 }
