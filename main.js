@@ -16,8 +16,18 @@ ob_wd = 50;
 
 game_ob = {
     x,
-    y
-   // type
+    y,
+
+    pezzi: [],
+    touchdown: [],
+    current_piece : 0
+}
+
+function add_piece() {
+    game_ob.touchdown = false;
+    game_ob.current_piece++;
+
+    game_ob.pezzi.push([canvas.width / 2, 0]);
 }
 
 function game_start() {
@@ -79,18 +89,16 @@ function move_sx() {
 }
 
 function update() {
-
     movable = true;
 
     if (game_ob.y + ob_hg <=  canvas.height - ob_hg) {
         game_ob.y = game_ob.y + ob_hg;
-
     }
     else {
-        ex = true;
+       
     }
-
 }
-
+add_piece();
+add_piece();
 game_start();
 setInterval(draw, 400);
