@@ -1,2 +1,2 @@
 # tetris_js
-a clone of tetris in JavaScript
+##un clone di tetris in JavaScript
